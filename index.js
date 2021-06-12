@@ -76,10 +76,8 @@ function countdown(msg){
                 .setDescription(`Error formatting your input !\n\nEnter '_ti.help' for more info !`)
                 .setFooter('Timer ©️','https://imgur.com/dSwmtwM.png');
     let user = msg.author.id;
-    console.log(user);
     let locmsgContents = msg.content.split(".");
     if(!locmsgContents[2]){
-        console.log('date not entered !');
         const format = new Discord.MessageEmbed()
                 .setTitle('⏰ Timer')
                 .setColor('#206694') 
@@ -150,7 +148,7 @@ function countdown(msg){
                             .setFooter('Timer ©️','https://imgur.com/dSwmtwM.png');
                         msg.edit(timerUpdate)
                     }   
-                },10000)
+                },60000)
             })
         }
     }
