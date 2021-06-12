@@ -75,10 +75,6 @@ function countdown(msg){
                 .setColor('#206694') 
                 .setDescription(`Error formatting your input !\n\nEnter '_ti.help' for more info !`)
                 .setFooter('Timer ©️','https://imgur.com/dSwmtwM.png');
-
-
-
-    var supersec = 60000;
     let user = msg.author.id;
     console.log(user);
     let locmsgContents = msg.content.split(".");
@@ -102,9 +98,6 @@ function countdown(msg){
         hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        if(hours<=1)
-            supersec = 5000;
-        console.log(days);
         if(isNaN(days)){
                 msg.channel.send(synatxerror);
             }    
@@ -149,12 +142,7 @@ function countdown(msg){
                         let ldays = Math.floor(ldistance / (1000 * 60 * 60 * 24));
                         let lhours = Math.floor((ldistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                         let lminutes = Math.floor((ldistance % (1000 * 60 * 60)) / (1000 * 60));
-                        let lseconds = Math.floor((ldistance % (1000 * 60)) / 1000);
-                        if(lhours<=1 && lminutes<=2)
-                            supersec = 1000;    
-                        else if(lhours<=1)
-                            supersec = 5000;
-                        // console.log(supersec);
+                        let lseconds = Math.floor((ldistance % (1000 * 60)) / 1000); 
                         let timerUpdate = new Discord.MessageEmbed()
                             .setTitle(name)
                             .setColor('#' + item)
@@ -162,11 +150,9 @@ function countdown(msg){
                             .setFooter('Timer ©️','https://imgur.com/dSwmtwM.png');
                         msg.edit(timerUpdate)
                     }   
-                },supersec)
+                },10000)
             })
         }
     }
-
-    console.log(process.env.TOKEN);
 
 client.login(process.env.TOKEN);
