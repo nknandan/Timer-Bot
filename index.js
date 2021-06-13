@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 require('dotenv').config()
 var colorcodes = ['1ABC9C', '11806A', '2ECC71', '1F8B4C', '3498DB', '9B59B6', '71368A', 'E91E63', 'AD1457', 'F1C40F', 'C27C0E', 'E67E22', 'A84300', 'E74C3C', '992D22', '95A5A6', '979C9F', '7F8C8D', 'BCC0C0', '34495E', '2C3E50', 'FFFF00', 'FFFF00']
-socket = io.listen(process.env.PORT);
 
 client.on("guildCreate", (guild) => {  ;
     console.log(`Joined new guild: ${guild.name}`);
