@@ -148,7 +148,7 @@ function countdown(msg){
                             .setFooter('Timer ©️','https://imgur.com/dSwmtwM.png');
                         msg.edit(timerUpdate)
                     }   
-                },60000)
+                },5000)
             })
         }
     }
